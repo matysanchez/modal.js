@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>modal.js</title>
+	<meta name="description" content="A tiny, powerful and highly extensible plugin to handle modals.">
+	<meta name="author" content="GitHub: @matysanchez">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="stylesheets/base.css" />
+	<link rel="stylesheet" href="stylesheets/skeleton.css" />
+	<link rel="stylesheet" href="stylesheets/layout.css" />
+	<link rel="stylesheet" href="stylesheets/modal.css" />
+	<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Hammersmith+One' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css' />
+	<link href='https://google-code-prettify.googlecode.com/svn/trunk/styles/desert.css' rel='stylesheet' type='text/css' />
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="javascripts/modal.js"></script>
+</head>
+<body>
+
+	<h1><a href="https://github.com/hangnest/modal.js">modal.js</a></h1>
+
+	<div class="github">
+		<div class="container">
+			<div class="eleven columns">
+				<p class="fork-repo">This is a open-source project. Fork it.</p>
+			</div>
+			<div class="five columns gh-buttons">
+				<p>
+					<iframe src="http://ghbtns.com/github-btn.html?user=hangnest&repo=modal.js&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="118" height="30"></iframe>
+					<iframe src="http://ghbtns.com/github-btn.html?user=hangnest&repo=modal.js&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="118" height="30"></iframe>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="container content">
+		<h2>Tiny, powerful and highly extensible plugin to handle modals.</h2>
+		<p>This is a really tiny plugin. Less than 100 lines of code. Only two files. 2 kilobytes (500 bytes minified and gzipped). Tiny, right?</p>
+
+		<h3>How to install?</h3>
+		<p>Good question. First, make sure that you have the code. You can download a <a href="">.zip file</a>, <a href="">.tar.gz file</a>, or you can download in the hacker way:</p>
+		<pre class="prettyprint allwhite">git clone https://github.com/hangnest/modal.js.git</pre>
+		<p>Now, you have to include the code into your project. Adding this:</p>
+		<pre class="prettyprint html">&lt;link href="stylesheets/modal.css" rel="stylesheet" type="text/css" /&gt;
+&lt;script src="javascripts/jquery.modal.js"&gt;&lt;/script&gt;</pre>
+		<p>You are ready to start using it.</p>
+
+		<h3>How to use?</h3>
+		<p>This is why you are here. The ideal scenario is to put a unique class (or id) to all the elements that are able to open a modal. But remember, this is a flexible plugin. To make the ideal scenario, you can use this code:</p>
+		<pre class="prettyprint html">&lt;script type="text/javascript"&gt;
+	$(".openModal").modal();
+&lt;/script&gt;</pre>
+		<p>You got it? Nice! But... what happens if this is not the ideal scenario? Don't worry, there is a solution for that.</p>
+		<p>Suppose that you have to open a modal when something happens, like a AJAX callback or something like that. You can open the modal, in a really easy way:</p>
+		<pre class="prettyprint js">$(".openModal").modal({
+	action: "open",
+	showElement: $(".openModal")
+});</pre>
+		<p>When you use a selector to call itself, that action is called self invoke. Not only in this plugin, is a popular term.</p>
+		<p>As the same way that you can open the modal, you can close. Yes, remotely. Also you can set the class name (or id) to the close button.</p>
+
+		<h3>What about the settings?</h3>
+		<p>The settings or parameters that this plugin uses are really simple. Take a look:</p>
+		<p>First of all you can call the function without set any parameters. And that is cool. But if you want, the functions uses only 4 parameters.</p>
+		<p><strong class="param">showElement</strong>: this means the name (class or id) of the selector that you are trying to show.</p>
+		<p><strong class="param">closeButton</strong>: this means the name (class or id) of the selector that are able to close the modal (showElement).</p>
+		<p><strong class="param">action</strong>: custom action to <em>open</em> or <em>close</em> the modal (showElement) in a "manual" way.</p>
+		<p><strong class="param">subFunction</strong>: this is really important. Allows you to execute a function inside the plugin. Used for many purposes, for example load content dynamically via AJAX.</p>
+		<p>To set the parameters that you want, is easy, like the previous example:</p>
+<pre class="prettyprint js">$(".buttonToOpen").modal({
+	showElement: $(".myCustomElement"),
+	closeButton: $(".myCustomButton"),
+	action: "open",
+	showElement: $(".openModal")
+});</pre>
+		<p>Remember when I say "highly extensible", well, add your own parameters and configuration is really simple. Take a look to modal.js file and start creating your own awesome modals.</p>
+
+		<h3>That is all? I want to see examples!</h3>
+		<p>It's alright dude. Calm down. I will show you some cool examples, from the most basic to a complex example. Let's go for it.</p>
+
+		<h4>#1 Getting Started</h4>
+		<p>We are to use the follow code:</p>
+<pre class="prettyprint js">&lt;a href="#" onclick="return false;" modalToShow="#customModal" class="clickToOpen"&gt;Show my a cute puppy&lt;/a&gt;
+&lt;div id="customModal" class="modal"&gt;
+	&lt;img class="cont" src="images/puppy.jpeg" border="0" /&gt;
+	&lt;a class="close"&gt;Close&lt;/a&gt;
+&lt;/div>
+&lt;script type="text/javascript"&gt;$(".clickToOpen").modal();&lt;/script&gt;</pre>
+		<p>Remember that I am using my own style, the plugin only include the basic style to work.</p>
+		<a href="#" onclick="return false;" modalToShow="#customModal" class="clickToOpen">Show my a cute puppy</a>
+		<div id="customModal" class="modal">
+			<img class="cont" src="images/puppy.jpeg" border="0" />
+			<a class="close">Close</a>
+		</div>
+		<script type="text/javascript">$(".clickToOpen").modal();</script>
+
+		<h4>#2 Using an action</h4>
+<pre class="prettyprint js">&lt;a href="#" onclick="inOneSecond(); return false;" class="clickToRun">Show my a cute puppy in 1 second&lt;/a&gt;
+&lt;div id="customModal" class="modal"&gt;
+	&lt;img class="cont" src="images/puppy.jpeg" border="0" /&gt;
+	&lt;a class="close"&gt;Close&lt;/a&gt;
+&lt;/div>
+&lt;script type="text/javascript"&gt;
+	function inOneSecond() {
+		setTimeout(function() {
+			$("#customModal").modal({
+				action: "open",
+				showElement: $("#customModal")
+			});
+		}, 1000);
+	}
+&lt;/script&gt;</pre>
+		<a href="#" onclick="inOneSecond(); return false;" class="clickToRun">Show my a cute puppy in 1 second</a>
+		<script type="text/javascript">
+			function inOneSecond() {
+				setTimeout(function() {
+					$("#customModal").modal({
+						action: "open",
+						showElement: $("#customModal")
+					});
+				}, 1000);
+			}
+		</script>
+
+		<h4>#3 Using an function</h4>
+<pre class="prettyprint js">&lt;a href="#" onclick="return false;" modalToShow="#newModal" class="loadPuppy"&gt;Show my a different puppy and when it's loaded alert me the width&lt;/a&gt;
+&lt;div id="newModal" class="modal"&gt;
+	&lt;img class="cont" id="otherDog" src="images/puppy2.jpg" border="0" /&gt;
+	&lt;a class="close"&gt;Close&lt;/a&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+	var puppyFunction = function() {
+		setTimeout(function() {
+			alert($("#otherDog").load().width() +"px. Really cute, right?");
+		}, 200);
+	};
+	$(".loadPuppy").modal({
+		subFunction: puppyFunction
+	});
+&lt;/script&gt;</pre>
+		<a href="#" onclick="return false;" modalToShow="#newModal" class="loadPuppy">Show my a different puppy and when it's loaded alert me the width</a>
+		<div id="newModal" class="modal">
+			<img class="cont" id="otherDog" src="images/puppy2.jpg" border="0" />
+			<a class="close">Close</a>
+		</div>
+		<script type="text/javascript">
+			var puppyFunction = function() {
+				setTimeout(function() {
+					alert($("#otherDog").load().width() +"px. Really cute, right?");
+				}, 200);
+			};
+			$(".loadPuppy").modal({
+				subFunction: puppyFunction
+			});
+		</script>
+
+		<h3>But... why? (about this)</h3>
+		<p>When I started to build Hangnest (under development right now), I decided to use flexible  and highly extensible technologies. And if that technologies are open-source, better. Maybe because I don't like frameworks, or in fact I don't like to work with a structures that are not flexible. That is why.</p>
+	</div>
+
+	<footer>
+		<div class="container">
+			<p>Hosted on GitHub. Project under MIT licence.</p>
+			<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-count="none">Tweet</a>
+			<a href="https://twitter.com/_MaTyS" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @_MaTyS</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+	</footer>
+
+</body>
+</html>

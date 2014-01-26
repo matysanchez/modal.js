@@ -1,0 +1,151 @@
+body{
+	margin: 0;
+}
+h1{
+	font-family: 'Coming Soon', cursive;
+	font-size: 5em;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+h1 a{
+	padding: 1em 0;
+	display:block;
+	background: #ff9900;
+	color: #ffffff;
+	text-decoration: none;
+}
+h2,h3,h4{
+	font-family: 'Hammersmith One', sans-serif;
+	color: #404040;
+	font-size: 4em;
+	line-height: 1.3em;
+	letter-spacing: .01rem;
+	margin-bottom: .6em;
+}
+h3{
+	font-size: 2.5em;
+	margin: .5em 0;
+}
+h4{
+	font-size: 2em;
+	margin-bottom: .5em;
+	color: #4183c4;
+}
+.github{
+	background: #4183c4;
+	color: #ffffff;
+	padding: 1em 0;
+}
+.github .container{
+	min-height: 26px;
+	background: url(../images/octocat.png) 0 center no-repeat;
+}
+.github .container p{
+	margin:0 0 0 40px;
+}
+.content{
+	margin: 3em auto;
+}
+.content p,.fork-repo{
+	font-family: Georgia;
+	letter-spacing: .01rem;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1.5;
+}
+.fork-repo{font-size: 20px;text-shadow:0 1px 0 rgba(0,0,0,.5);}
+.content a{
+	color: #ff9900;
+	text-decoration: none;
+}
+.content a:hover{
+	text-decoration: underline;
+}
+footer{
+	background: #e8e8e8;
+	padding: 3em 0;
+	text-align: center;
+}
+.param{
+	border-radius: .45em;
+	border: none;
+	padding: .2em .25em !important;
+	border: 1px solid #e8e8e8;
+	background: #e8e8e8;
+	color: #4183c4;
+}
+
+/* Say thanks to this guys: http://css-tricks.com/snippets/css/make-pre-text-wrap/ */
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	font-family: Consolas, "Liberation Mono", Courier, monospace !important;
+	font-size: 14px !important;
+	margin: 0 0 2.5em 0;
+}
+.allwhite span{color:white !important;}
+pre.prettyprint { border:0 !important; padding: 12px !important; background-color: #404040 !important; }
+
+
+/* Examples */
+.cont{
+	box-shadow: 0px 0px 10px 0px rgba(64, 64, 64, 0.6);
+	background: #fff;
+    padding: 8px;
+}
+a.clickToOpen, a.clickToRun, a.loadPuppy{
+	display: block;
+	padding: 1em 0;
+	color: #fff;
+	font-size: 24px;
+	text-align: center;
+	margin: .5em 0;
+	background: #4183c4;
+	line-height: 1.3em;
+}
+
+
+/* The close button is the same for all */
+.close{
+	-webkit-border-bottom-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomright: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-bottom-right-radius: 6px;
+	border-bottom-left-radius: 6px;
+	display: block;
+	width: 70px;
+	margin:0 auto;
+	background: #4183c4;
+	text-align: center;
+	padding: 3px 0;
+	z-index: 9999;
+}
+a.close{color:#ffffff;}
+a:hover.close{text-decoration: none;}
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+		body{font-size:11px;}
+		.gh-buttons{
+			margin-top: 5px !important;
+		}
+		.fork-repo{font-size:14px;}
+	}
